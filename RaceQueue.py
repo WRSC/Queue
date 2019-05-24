@@ -65,11 +65,11 @@ if __name__ == "__main__":
     rq.register_attempt('Soton')
     time.sleep(5)
     print(rq.next_ready_teams(number=2))
-    rq.finish_attempt('Soton')
+    rq.finish_attempt('Shanghai')
     time.sleep(5)
     print(rq.next_ready_teams())
     time.sleep(5)
-    rq.register_attempt('Shanghai') # Unsuccessful attempt
+    rq.register_attempt('Soton') # Unsuccessful attempt
     print(rq.next_ready_teams())
     print(rq.race_history)
 
