@@ -1,5 +1,6 @@
 import datetime
 import time
+import pickle
 
 class RaceQueue():
     
@@ -33,6 +34,10 @@ class RaceQueue():
             
         else:
             print('Can\'t find the team name, have you registered it and spell it correct?')
+
+        with open('race_history.txt', 'wb') as f:
+            pickle.dump(self.race_history, f)
+    
             
     def next_ready_teams(self, number=3):
         sorted_waiting_list = sorted(self.waiting_list, key=lambda d: (d["number_of_attempts"], d["ready_time"]))
@@ -49,6 +54,9 @@ class RaceQueue():
                 self.waiting_list[self.ready_teams.index(team_id)]["number_of_attempts"] = number_of_attempts + 1
             else:
                 print("This team haven't registered for an attempt yet!")
+        
+        with open('race_history.txt', 'wb') as f:
+            pickle.dump(self.race_history, f)
              
 if __name__ == "__main__":
     rq = RaceQueue()
