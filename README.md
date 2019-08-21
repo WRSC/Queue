@@ -14,9 +14,9 @@ Register team(s) --> Register attempt --> Waiting --> Race --> Finish --> End
                         Another attempt <------------------------- 
 ```
 
-The following example show the usage of `RaceQueue`. Use `ipython ` 
+The following example show the usage of `RaceQueue`. Use `ipython -i RaceQueue.py` to run the admin tool. 
 
-```
+```python
 
 rq = RaceQueue()
 rq.register_teams(['Shanghai','Zhejiang','Soton'])
@@ -39,4 +39,7 @@ time.sleep(5)
 rq.register_attempt('Soton') # Unsuccessful attempt
 print(rq.next_ready_teams())
 print(rq.race_history)
+
 ```
+
+Open a new terminal to show the queueing status `python ShowQueue.py`.
