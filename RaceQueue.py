@@ -36,7 +36,7 @@ class RaceQueue():
             print('Can\'t find the team name, have you registered it and spell it correct?')
 
         with open('race_history.txt', 'wb') as f:
-            pickle.dump(self.race_history, f)
+            pickle.dump(self.waiting_list, f)
     
             
     def next_ready_teams(self, number=3):
@@ -56,7 +56,7 @@ class RaceQueue():
                 print("This team haven't registered for an attempt yet!")
         
         with open('race_history.txt', 'wb') as f:
-            pickle.dump(self.race_history, f)
+            pickle.dump(self.waiting_list, f)
              
 if __name__ == "__main__":
     rq = RaceQueue()
