@@ -27,7 +27,7 @@ def main(screen_display):
             screen_display.addstr(6+team_order, 6, "{}. Team {}".format(team_order, waiting_team['id']))
             team_order += 1
 
-        screen_display()
+        
         screen_display.refresh()
         time.sleep(5)
 
@@ -35,6 +35,6 @@ def main(screen_display):
 
 if __name__ == "__main__":
 
-    
+
 
     curses.wrapper(main)

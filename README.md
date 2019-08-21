@@ -18,25 +18,32 @@ The following example show the usage of `RaceQueue`. Use `ipython -i RaceQueue.p
 
 ```python
 
-rq = RaceQueue()
+# Register multiple teams
 rq.register_teams(['Shanghai','Zhejiang','Soton'])
 
+# Register one single team
 rq.register_team('Plymouth')
-time.sleep(5)
+
+
+# Register attempt by first come first serve rule
 rq.register_attempt('Plymouth')
-time.sleep(5)
+
 rq.register_attempt('Shanghai')
-time.sleep(5)
+
 rq.register_attempt('Soton')
-time.sleep(5)
+
 rq.register_attempt('Zhejiang')
-time.sleep(5)
+
+# Decide next teams to race
 print(rq.next_ready_teams(number=2))
+
+# Record a finish of attempt
 rq.finish_attempt('Shanghai')
-time.sleep(5)
 print(rq.next_ready_teams())
-time.sleep(5)
-rq.register_attempt('Soton') # Unsuccessful attempt
+
+# Duplicate registration would result in waiting from the end of queue
+rq.register_attempt('Soton') 
+
 print(rq.next_ready_teams())
 print(rq.race_history)
 
