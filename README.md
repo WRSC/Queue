@@ -43,3 +43,5 @@ print(rq.race_history)
 ```
 
 Open a new terminal to show the queueing status `python ShowQueue.py`.
+
+![Screenshot from 2019-08-21 17-45-38](https://user-images.githubusercontent.com/6488896/63470847-a745e100-c43b-11e9-80d1-280d0481d676.png)
